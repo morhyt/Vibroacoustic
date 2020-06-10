@@ -47,6 +47,7 @@ sx0(end-round(nx/2-1):end) = L-x(end-round(nx/2-1):end);
 sx0 = sx0+12;
 
 sx = zeros(nt,nx);
+
 for j = 1:nt
     
     sx(j,:) = sin(kx*x).*sx0*cos(omega*t(j));
@@ -57,7 +58,8 @@ end
 
 figure
 for j = 1:nt
-    plot(x+sx(j,:)/L,zeros(1,nx),'o','Markersize',3)
+    
+    plot(x+sx(j,:)/L,zeros(1,nx),'color','r','o','Markersize',3)
     grid on
     xlim([x(1), x(end)]);
     ylim([-max(sx0), max(sx0)]);
